@@ -1,7 +1,6 @@
-[![Build Status](https://travis-ci.org/pithyone/wechat.svg?branch=master)](https://travis-ci.org/pithyone/wechat)
-[![Latest Stable Version](https://poser.pugx.org/pithyone/wechat/v/stable)](https://packagist.org/packages/pithyone/wechat)
-[![Latest Unstable Version](https://poser.pugx.org/pithyone/wechat/v/unstable)](https://packagist.org/packages/pithyone/wechat)
-[![License](https://poser.pugx.org/pithyone/wechat/license)](https://packagist.org/packages/pithyone/wechat)
+[![Latest Stable Version](https://poser.pugx.org/tingv/wechat/v/stable)](https://packagist.org/packages/tingv/wechat)
+[![Latest Unstable Version](https://poser.pugx.org/tingv/wechat/v/unstable)](https://packagist.org/packages/tingv/wechat)
+[![License](https://poser.pugx.org/tingv/wechat/license)](https://packagist.org/packages/tingv/wechat)
 
 # WeWork
 
