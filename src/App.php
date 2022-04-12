@@ -9,7 +9,8 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Psr\Log\LoggerInterface;
 use Psr\SimpleCache\CacheInterface;
-use Symfony\Component\Cache\Simple\FilesystemCache;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Symfony\Component\Cache\Psr16Cache;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\HttpFoundation\Request;
@@ -132,11 +133,9 @@ class App extends ContainerBuilder
         if (is_subclass_of($cache, CacheInterface::class)) {
             $this->register('cache', $cache);
         } else {
-            $service = $this->register('cache', FilesystemCache::class);
-
-            if ($cache && isset($cache['path'])) {
-                $service->setArguments(['', 0, $cache['path']]);
-            }
+            $psr6Cache = new FilesystemAdapter('wechat', 0, $cache['path']);
+            $service = $this->register('cache', Psr16Cache::class);
+            $service->setArguments([$psr6Cache]);
         }
     }
 
